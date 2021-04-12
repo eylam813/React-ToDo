@@ -21,6 +21,12 @@ const App = () => {
     setinputValue('')
   };
 
+  // empty todos array
+  const clearArr = (event) => {
+    event.preventDefault();
+    setTodos([]);
+  }
+
   return (
     <form onSubmit={handleSubmit}>
     <div className="container">
@@ -50,7 +56,7 @@ const App = () => {
             })}
           </ul>
         </div>
-        <button id="clear-btn" style={{ visibility: "visible" }}>
+        <button id="clear-btn" onClick={clearArr}>
           Clear List
         </button>
       </div>
